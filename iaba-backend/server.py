@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 #For now let's just load from the CSV's. Don't worry about SQL

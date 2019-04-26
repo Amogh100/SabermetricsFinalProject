@@ -33,7 +33,7 @@ const columns = [
 class PlayerStats extends Component {
 
   componentWillMount() {
-    fetch("http://localhost:5000/player_iaba")
+    fetch("http://157.230.226.56:5000/player_iaba")
       .then(res => 
         res.json()
       )
