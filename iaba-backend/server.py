@@ -34,13 +34,7 @@ def get_iaba_data():
     resp = jsonify({"data": player_details})
     return resp
 
-# @app.route("/player_iaba_details", methods=['GET'])
-# def get_player_iaba_details():
-#     player_id = request.args.get('playerID', type=int)
-#     year_id = request.args.get('yearID', type=int)
-#     player_stats = batter_details[(batter_details['batter'] == player_id) & (batter_details['game_year'] == year_id)]
-#     resp = jsonify({"details": player_stats.to_dict('records')})
-#     return resp
+
 
 @app.route("/team_iaba", methods=['GET'])
 def get_team_iaba():
@@ -49,4 +43,4 @@ def get_team_iaba():
 
 if __name__ == '__main__':
     player_details = build_player_details_dicts()
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

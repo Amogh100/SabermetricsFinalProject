@@ -15,7 +15,7 @@ const columns = [
     filter: textFilter()
   },
   {
-    dataField: "game_year",
+    dataField: "yearID",
     text: "Year",
     filter: numberFilter()
   },
