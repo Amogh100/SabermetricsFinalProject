@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import filterFactory, { numberFilter, textFilter } from 'react-bootstrap-table2-filter';
 import {roundNumberFieldToThird} from './common';
+import paginationFactory from 'react-bootstrap-table2-paginator';
+
 
 const columns = [
     {
@@ -33,19 +35,17 @@ const columns = [
         text: "IABA",
         headerStyle: (column, columnIndex) => {
             return {width: '90px', textAlign: 'center'};
-        }
+        },
+        sort: true
     }
 ];
 
 
-const expandRow = {
-    renderer: row => (<div><h3>Hello there</h3></div>)
-};
 
 class TeamStats extends Component {
   
   componentWillMount() {
-    fetch("http://157.230.226.56:5000/team_iaba")
+    fetch("http://0.0.0.0:5000/team_iaba")
       .then(res => 
         res.json()
       )
@@ -67,7 +67,7 @@ class TeamStats extends Component {
 
   render() {
     return (
-      <BootstrapTable keyField="id" data={this.state.data} columns={columns} filter={filterFactory()} expandRow={expandRow} />
+      <BootstrapTable keyField="id" data={this.state.data} columns={columns} filter={filterFactory()} pagination={paginationFactory()}/>
     );
   }
 }

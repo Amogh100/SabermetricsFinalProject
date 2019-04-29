@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import filterFactory, { numberFilter, textFilter } from 'react-bootstrap-table2-filter';
 import {roundNumberFieldToThird, cleanName, addKeyField} from './common';
+import paginationFactory from 'react-bootstrap-table2-paginator';
+
 
 const columns = [
   {
@@ -21,25 +23,42 @@ const columns = [
   },
   {
     dataField: "IABA",
-    text: "IABA"
+    text: "IABA",
+    sort: true
   },
   {
     dataField: "teamID",
     text: "Team",
     filter: textFilter()
+  },
+  {
+    dataField: "OBP",
+    text: "OBP"
+  },
+  {
+    dataField: "OPS",
+    text: "OPS"
+  },
+  {
+    dataField: "BA",
+    text: "BA"
   }
+  
 ];
 
 class PlayerStats extends Component {
 
   componentWillMount() {
-    fetch("http://157.230.226.56:5000/player_iaba")
+    fetch("http://0.0.0.0:5000/player_iaba")
       .then(res => 
         res.json()
       )
       .then(res => {
         console.log(res.data)
         roundNumberFieldToThird(res.data, 'IABA');
+        roundNumberFieldToThird(res.data, 'OBP');
+        roundNumberFieldToThird(res.data, 'OPS');
+        roundNumberFieldToThird(res.data, 'BA');
         cleanName(res.data, 'name_first');
         cleanName(res.data, 'name_last');
         res.data = addKeyField(res.data, 'id')
@@ -73,7 +92,7 @@ class PlayerStats extends Component {
 
   render() {
     return (
-      <BootstrapTable keyField="key" data={this.state.data} columns={columns} filter={filterFactory()} expandRow={this.expandRow} />
+      <BootstrapTable keyField="key" data={this.state.data} columns={columns} filter={filterFactory()} expandRow={this.expandRow} pagination={paginationFactory()} />
     );
   }
 }
