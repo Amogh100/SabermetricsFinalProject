@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import DataTabs from './DataTabs';
+var Latex = require('react-latex');
+
 
 class App extends Component {
 
@@ -13,7 +15,11 @@ class App extends Component {
   render(){
     return (
       <div>
+        <div style={{top: "50px"}}>
         <DataTabs></DataTabs>
+        </div>
+        <div style={{width: "40%", margin: "0 auto", top: "50px"}}>
+        </div>
       </div>
     )
   }

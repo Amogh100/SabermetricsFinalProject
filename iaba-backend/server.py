@@ -12,16 +12,16 @@ team_iaba = pd.read_csv("../team_iaba.csv")
 
 
 def build_player_details_dicts():
-    player_iaba = pd.read_csv('../player_iaba.csv')[['batter', 'name_first', 'name_last', 'yearID', 'teamID', 'IABA']]
+    player_iaba_data = pd.read_csv('../player_iaba.csv')[['batter', 'name_first', 'name_last', 'yearID', 'teamID', 'IABA', 'OBP', 'BA', 'OPS']]
     batter_details  = pd.read_csv('../batter_data.csv')
     res = []
-    for _, row in player_iaba.iterrows():
+    for _, row in player_iaba_data.iterrows():
         player_id = row['batter']
         year_id = row['yearID']
         player_stats = batter_details[(batter_details['batter'] == player_id) & (batter_details['game_year'] == year_id)]
         player_iaba = row.to_dict()
         details = player_stats.to_dict()
-        keys_to_keep = [ 'H']
+        keys_to_keep = ['H']
         filtered_details = {key: details[key] for key in keys_to_keep}
         filtered_details['hits_per_inning'] = list(filtered_details['H'].values())
         del filtered_details['H']
