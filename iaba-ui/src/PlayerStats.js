@@ -22,14 +22,14 @@ const columns = [
     filter: numberFilter()
   },
   {
-    dataField: "IABA",
-    text: "IABA",
-    sort: true
-  },
-  {
     dataField: "teamID",
     text: "Team",
     filter: textFilter()
+  },
+  {
+    dataField: "IABA",
+    text: "IABA",
+    sort: true
   },
   {
     dataField: "OBP",
