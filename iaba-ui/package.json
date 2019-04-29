@@ -10,6 +10,7 @@
     "react-bootstrap-table2-filter": "^1.1.9",
     "react-bootstrap-table2-paginator": "^2.0.6",
     "react-dom": "^16.8.6",
+    "react-latex": "^1.2.0",
     "react-scripts": "2.1.8"
   },
   "scripts": {
