@@ -15,9 +15,13 @@ You have to decompress the data.zip file to get csv files needed in the jupyter 
 | Baseball Reference War | 0.34727003401060763 | 4.279123724009032e-50 |
 
 # Results
-![alt text](https://github.com/Amogh100/SabermetricsFinalProject/blob/master/)
 ![alt text](https://github.com/Amogh100/SabermetricsFinalProject/blob/master/ba.png)
 
 <p align="center">
-  <img src="iaba.png" title="hover text">
+  <h5>IABA<h5>
+  <img src="iaba.png" title="IABA">
+</p>
+<p align="center">
+  <h5>BA<h5>
+  <img src="ba.png" title="BA">
 </p>
