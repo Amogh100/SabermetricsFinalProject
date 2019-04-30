@@ -17,7 +17,7 @@ You have to decompress the data.zip file to get csv files needed in the jupyter 
 # Results
 <p align="center">
   <h5 align="center">IABA<h5>
-  <img src="iaba.png" align="center" title="IABA">
+  <img src="iaba.png" style="display: block; margin-left: auto; margin-right: auto;" title="IABA">
 </p>
 <p align="center">
   <h5 align="center">BA<h5>
