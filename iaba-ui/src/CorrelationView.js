@@ -21,7 +21,7 @@ class CorrelationView extends Component {
     }
 
     componentWillMount() {
-        fetch("http://0.0.0.0:5000/player_histories")
+        fetch("http://157.230.226.56:5000/player_histories")
           .then(res => 
             res.json()
           )
