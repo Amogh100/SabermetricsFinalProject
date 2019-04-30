@@ -29,6 +29,26 @@ def build_player_details_dicts():
         res.append(player_iaba)
     return res
 
+def build_player_stat_histories():
+    player_iaba_data = pd.read_csv('../player_iaba.csv')[['batter', 'name_first', 'name_last', 'yearID', 'teamID', 'IABA', 'OBP', 'BA', 'OPS']]
+    res = {}
+    #Dictionary is "player_id" -> [{year, obp, iaba}]
+    for _, row in player_iaba_data.iterrows():
+        first_name = row['name_first']
+        last_name = row['name_last']
+        player_id = row['batter']
+        if player_id not in res:
+            res[player_id] = {}
+            res[player_id]['stats'] = []
+        res[player_id]['stats'].append({"year": row['yearID'], "ops": row['OPS'], "iaba": row['IABA'], "obp": row['OBP'], 'ba': row['BA']})
+        res[player_id]['name'] = first_name.capitalize() + " "  + last_name.capitalize()
+    return res
+
+
+@app.route('/player_histories', methods=['GET'])
+def get_player_stat_histories():
+    return jsonify({"data": player_stat_histories})
+
 @app.route('/player_iaba', methods=['GET'])
 def get_iaba_data():
     resp = jsonify({"data": player_details})
@@ -43,4 +63,6 @@ def get_team_iaba():
 
 if __name__ == '__main__':
     player_details = build_player_details_dicts()
+    player_stat_histories = build_player_stat_histories()
+    print(player_stat_histories)
     app.run(debug=True, host='0.0.0.0')

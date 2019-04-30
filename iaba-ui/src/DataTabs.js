@@ -5,6 +5,7 @@ import Tab from 'react-bootstrap/Tab'
 import PlayerStats from './PlayerStats';
 import TeamStats from './TeamStats';
 import AboutPage from './AboutPage';
+import CorrelationView from './CorrelationView';
 
 
 class DataTabs extends Component {
@@ -31,6 +32,9 @@ class DataTabs extends Component {
       </Tab>
       <Tab eventKey="teams" title="Team Stats">
         <TeamStats/>
+      </Tab>
+      <Tab eventKey="graph" title="Comparison with other Offensive Stats">
+         <CorrelationView style={{top: "100px"}}/>
       </Tab>
     </Tabs>    );
   }
