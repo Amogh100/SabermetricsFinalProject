@@ -32,16 +32,9 @@ const columns = [
     sort: true
   },
   {
-    dataField: "OBP",
-    text: "OBP"
-  },
-  {
-    dataField: "OPS",
-    text: "OPS"
-  },
-  {
-    dataField: "BA",
-    text: "BA"
+    dataField: "AB_x",
+    text: "AB",
+    sort: true
   }
   
 ];
@@ -56,9 +49,6 @@ class PlayerStats extends Component {
       .then(res => {
         console.log(res.data)
         roundNumberFieldToThird(res.data, 'IABA');
-        roundNumberFieldToThird(res.data, 'OBP');
-        roundNumberFieldToThird(res.data, 'OPS');
-        roundNumberFieldToThird(res.data, 'BA');
         cleanName(res.data, 'name_first');
         cleanName(res.data, 'name_last');
         res.data = addKeyField(res.data, 'id')

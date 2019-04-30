@@ -64,7 +64,7 @@ class CorrelationView extends Component {
               <Line type="monotone" dataKey="ba" stroke="#FF00FF" />
             </LineChart>
 
-             <input style={{left: 320, position: "relative", top: 60}} list="names" onChange={this.onPlayerSelect}></input>
+             <input style={{left: 320, position: "relative", top: 60}} list="names" onChange={this.onPlayerSelect} placeholder={this.state.players.length > 0 ? this.state.players[0] : ""}></input>
              <datalist id="names">
                 {this.state.players.map(playername => <option value={playername}/>)}
              </datalist>

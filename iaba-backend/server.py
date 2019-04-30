@@ -12,7 +12,7 @@ team_iaba = pd.read_csv("../team_iaba.csv")
 
 
 def build_player_details_dicts():
-    player_iaba_data = pd.read_csv('../player_iaba.csv')[['batter', 'name_first', 'name_last', 'yearID', 'teamID', 'IABA', 'OBP', 'BA', 'OPS']]
+    player_iaba_data = pd.read_csv('../player_iaba.csv')[['batter', 'name_first', 'name_last', 'yearID', 'teamID', 'IABA', 'AB_x']]
     batter_details  = pd.read_csv('../batter_data.csv')
     res = []
     for _, row in player_iaba_data.iterrows():
