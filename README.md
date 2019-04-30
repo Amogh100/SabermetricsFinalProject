@@ -13,3 +13,8 @@ You have to decompress the data.zip file to get csv files needed in the jupyter 
 | OPS | 0.4472021248079238 | 5.675155491600669e-72 |
 | Team Wins | 0.11882304538122929 | 0.1961488642999242 |
 | Baseball Reference War | 0.34727003401060763 | 4.279123724009032e-50 |
+
+# Results
+![alt text](https://github.com/Amogh100/SabermetricsFinalProject/blob/master/iaba.png)
+![alt text](https://github.com/Amogh100/SabermetricsFinalProject/blob/master/ba.png)
+
