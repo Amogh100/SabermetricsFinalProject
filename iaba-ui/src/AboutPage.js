@@ -13,7 +13,7 @@ class AboutPage extends Component {
     return (
       <div style={{top: "100px"}}>
         <div>
-        <h4>IABA is a baseball statistic that we created which stands for inning-adjusted batting average.</h4>
+        <h4>Inning-adjusted batting average or IABA is a baseball statistic that we created which stands for inning-adjusted batting average.</h4>
         <br/>
         </div>
         <div style={{top: "20px"}}>
